@@ -19,10 +19,10 @@ public class Main {
 
         double hypotenuse = getDoubleFromConsole("Enter hypotenuse length");
 
-        System.out.printf("Result is: %.3f%n", findInnerCircleRadiusViaHypotenuse(hypotenuse));
+        System.out.printf("Result is: %.3f%n", findInnerCircleSquareViaHypotenuse(hypotenuse));
     }
 
-    public static double findInnerCircleRadiusViaHypotenuse(double hypotenuse) {
+    public static double findInnerCircleSquareViaHypotenuse(double hypotenuse) {
         double side = hypotenuse / Math.sqrt(2);
         double radius = (2 * side - hypotenuse) / 2;
         return Math.PI * radius * radius;
