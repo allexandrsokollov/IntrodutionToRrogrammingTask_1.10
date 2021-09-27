@@ -17,15 +17,20 @@ public class Main {
     public static void main(String[] args) {
         Locale.setDefault(Locale.ROOT);
 
-        Scanner in = new Scanner(System.in);
+        double hypotenuse = getDoubleFromConsole("Enter hypotenuse length");
 
-        System.out.print("Enter hypotenuse length: ");
-        double hypotenuse = in.nextDouble();
+        System.out.printf("Result is: %.3f%n", findInnerCircleRadiusViaHypotenuse(hypotenuse));
+    }
 
+    public static double findInnerCircleRadiusViaHypotenuse(double hypotenuse) {
         double side = hypotenuse / Math.sqrt(2);
         double radius = (2 * side - hypotenuse) / 2;
+        return Math.PI * radius * radius;
+    }
 
-        System.out.printf("Result is: %.3f%n", Math.PI * radius * radius);
-
+    public static double getDoubleFromConsole(String welcomingMassage) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("\n" + welcomingMassage + ": ");
+        return in.nextDouble();
     }
 }
